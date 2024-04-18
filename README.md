@@ -10,7 +10,7 @@ Lab instructions: <https://ucsb-cs156.github.io/s24/lab/team01.html>
 |           |           | `LocationQueryService`      | `LocationController`      |
 |           |           | `PublicHolidayQueryService` | `PublicHolidayController` |
 |           |           | `TidesQueryService`         | `TidesController`         |
-|           |           | `UniversityQueryService`    | `UniversityController`    |
+| Kevin     | ukyl      | `UniversityQueryService`    | `UniversityController`    |
 |           |           | `ZipCodeQueryService`       | `ZipCodeController`       |
 ```
 
