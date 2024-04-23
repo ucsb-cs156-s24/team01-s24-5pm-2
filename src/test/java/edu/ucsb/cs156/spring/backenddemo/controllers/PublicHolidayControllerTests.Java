@@ -8,7 +8,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+
 import edu.ucsb.cs156.spring.backenddemo.services.PublicHolidayQueryService;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
@@ -19,29 +21,35 @@ import static org.mockito.Mockito.times;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@WebMvcTest(value = PublicHolidaysController.class)
+
+
+import org.springframework.http.HttpHeaders;
+
+
+@WebMvcTest(value = PublicHolidayController.class)
 public class PublicHolidayControllerTests {
-    private ObjectMapper mapper = new ObjectMapper();
-    @Autowired
-    private MockMvc mockMvc;
-    @MockBean
-    PublicHolidayQueryService pHQS;
+  private ObjectMapper mapper = new ObjectMapper();
+  @Autowired
+  private MockMvc mockMvc;
+  @MockBean
+  PublicHolidayQueryService mockPublicHolidayQueryService;
 
-    @Test
-    public void test_getPublicHolidays() throws Exception {
+  @Test
+  public void test_getPublicHolidays() throws Exception {
+  
+    String fakeJsonResult="{ \"fake\" : \"result\" }";
+    String countryCode = "US";
+    String year = "2012";
+    when(mockPublicHolidayQueryService.getJSON(eq(year), eq(countryCode))).thenReturn(fakeJsonResult);
 
-        String fakeJsonResult = "{ \"fake\" : \"result\" }";
-        String year = "2024";
-        String countryCode = "UK";
-        when(pHQS.getJSON(eq(year), eq(countryCode))).thenReturn(fakeJsonResult);
+    String url = String.format("/api/publicholidays/get?countryCode=%s&year=%s",countryCode,year);
 
-        String url = String.format("/api/publicholidays/get?countryCode=%s&year=%s", countryCode, year);
+    MvcResult response = mockMvc
+        .perform( get(url).contentType("application/json"))
+        .andExpect(status().isOk()).andReturn();
 
-        MvcResult response = mockMvc
-                .perform(get(url).contentType("application/json"))
-                .andExpect(status().isOk()).andReturn();
+    String responseString = response.getResponse().getContentAsString();
 
-        String responseString = response.getResponse().getContentAsString();
-        assertEquals(fakeJsonResult, responseString);
-    }
+    assertEquals(fakeJsonResult, responseString);
+  }
 }
