@@ -32,9 +32,10 @@ public class PublicHolidaysController {
     @Operation(summary="Recieve the 2 letter code", description ="Data of country uploaded")
     @GetMapping("/get")
     public ResponseEntity<String> getPublicHolidays(
-        @Parameter(name="year", description="requested year") @RequestParam String year,
-        @Parameter(name="countryCode", description="countryCode of country") @RequestParam String countryCode
+        @Parameter(name="year", description="requested year", example="2021") @RequestParam String year,
+        @Parameter(name="countryCode", description="countryCode of country", example="US") @RequestParam String countryCode
     ) throws JsonProcessingException {
+        log.info("getPublicHolidays: year={} countryCode={}", year, countryCode);
         String result = publicHolidayQueryService.getJSON(year, countryCode);
         return ResponseEntity.ok().body(result);
     }
