@@ -32,11 +32,12 @@ import io.swagger.v3.oas.annotations.tags.Tag;
     @Operation(summary=&quot;Recieve the 2 letter code&quot;, description =&quot;Data of country uploaded&quot;)
     @GetMapping(&quot;/get&quot;)
     public ResponseEntity&lt;String&gt; getPublicHolidays(
-        @Parameter(name=&quot;year&quot;, description=&quot;requested year&quot;) @RequestParam String year,
-        @Parameter(name=&quot;countryCode&quot;, description=&quot;countryCode of country&quot;) @RequestParam String countryCode
+        @Parameter(name=&quot;year&quot;, description=&quot;requested year&quot;, example=&quot;2021&quot;) @RequestParam String year,
+        @Parameter(name=&quot;countryCode&quot;, description=&quot;countryCode of country&quot;, example=&quot;US&quot;) @RequestParam String countryCode
     ) throws JsonProcessingException {
-<span class="nc" id="L38">        String result = publicHolidayQueryService.getJSON(year, countryCode);</span>
-<span class="nc" id="L39">        return ResponseEntity.ok().body(result);</span>
+<span class="nc" id="L38">        log.info(&quot;getPublicHolidays: year={} countryCode={}&quot;, year, countryCode);</span>
+<span class="nc" id="L39">        String result = publicHolidayQueryService.getJSON(year, countryCode);</span>
+<span class="nc" id="L40">        return ResponseEntity.ok().body(result);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
