@@ -21,12 +21,15 @@ import static org.mockito.Mockito.times;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.http.HttpHeaders;
 
 
-@WebMvcTest(value = PublicHolidayController.class)
+@WebMvcTest(value = PublicHolidaysController.class)
 public class PublicHolidayControllerTests {
   private ObjectMapper mapper = new ObjectMapper();
   @Autowired
@@ -39,7 +42,7 @@ public class PublicHolidayControllerTests {
   
     String fakeJsonResult="{ \"fake\" : \"result\" }";
     String countryCode = "US";
-    String year = "2012";
+    String year = "2021";
     when(mockPublicHolidayQueryService.getJSON(eq(year), eq(countryCode))).thenReturn(fakeJsonResult);
 
     String url = String.format("/api/publicholidays/get?countryCode=%s&year=%s",countryCode,year);
