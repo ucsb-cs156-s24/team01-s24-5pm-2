@@ -38,7 +38,7 @@ public class LocationQueryService {
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         HttpEntity<String> entity = new HttpEntity<>(headers);
-        String ucsbLoc = "UCSB";
+        // String ucsbLoc = "UCSB";
 
         Map<String, String> uriVariables = Map.of("location", location);
 
