@@ -35,9 +35,9 @@ import io.swagger.v3.oas.annotations.tags.Tag;
         @Parameter(name=&quot;year&quot;, description=&quot;requested year&quot;, example=&quot;2021&quot;) @RequestParam String year,
         @Parameter(name=&quot;countryCode&quot;, description=&quot;countryCode of country&quot;, example=&quot;US&quot;) @RequestParam String countryCode
     ) throws JsonProcessingException {
-<span class="nc" id="L38">        log.info(&quot;getPublicHolidays: year={} countryCode={}&quot;, year, countryCode);</span>
-<span class="nc" id="L39">        String result = publicHolidayQueryService.getJSON(year, countryCode);</span>
-<span class="nc" id="L40">        return ResponseEntity.ok().body(result);</span>
+<span class="fc" id="L38">        log.info(&quot;getPublicHolidays: year={} countryCode={}&quot;, year, countryCode);</span>
+<span class="fc" id="L39">        String result = publicHolidayQueryService.getJSON(year, countryCode);</span>
+<span class="fc" id="L40">        return ResponseEntity.ok().body(result);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
