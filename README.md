@@ -4,7 +4,7 @@ Lab instructions: <https://ucsb-cs156.github.io/s24/lab/team01.html>
 
 * TODO: Update the following table, then delete this line that says "TODO".
 
-```
+
 |   Name    | GitHub Id          |  Service                    | Controller                |
 |-----------|--------------------|-----------------------------|---------------------------|
 | Richard   | richardfang888     | `LocationQueryService`      | `LocationController`      |
@@ -13,7 +13,7 @@ Lab instructions: <https://ucsb-cs156.github.io/s24/lab/team01.html>
 | Kevin     | ukyl               | `UniversityQueryService`    | `UniversityController`    |
 | Aaron     | SloggyYoggy        | `ZipCodeQueryService`       | `ZipCodeController`       |
 | Nevin     | NevMan1            | `JokeQueryService`          | `JokeController`          |
-```
+
 
 
 Repo: https://github.com/ucsb-cs156-s24/s24-5pm-2-team01
