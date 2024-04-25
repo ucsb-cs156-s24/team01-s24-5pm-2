@@ -8,11 +8,11 @@ Lab instructions: <https://ucsb-cs156.github.io/s24/lab/team01.html>
 |   Name    | GitHub Id |  Service                    | Controller                |
 |-----------|-----------|-----------------------------|---------------------------|
 | Richard                    | richardfang888         | `LocationQueryService`      | `LocationController`      |
-|  Abhishek Ambastha         |    abhishekambastha04       | `PublicHolidayQueryService` | `PublicHolidayController` |
+| Abhishek Ambastha          | abhishekambastha04     | `PublicHolidayQueryService` | `PublicHolidayController` |
 |  Nico                      |    nicoshinozaki       | `TidesQueryService`         | `TidesController`         |
-|  Kevin    |  ukyl    | `UniversityQueryService`    | `UniversityController`    |
-|    Aaron  |    SloggyYoggy    | `ZipCodeQueryService`       | `ZipCodeController`       |
-| Nevin Manimaran  |    NevMan1    | `JokeQueryService`       | `JokeController`       |
+|  Kevin                     |  ukyl                  | `UniversityQueryService`    | `UniversityController`    |
+|    Aaron                   |    SloggyYoggy         | `ZipCodeQueryService`       | `ZipCodeController`       |
+| Nevin Manimaran            |    NevMan1             | `JokeQueryService`          | `JokeController`          |
 ```
 
 
