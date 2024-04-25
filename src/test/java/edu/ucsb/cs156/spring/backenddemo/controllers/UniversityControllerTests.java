@@ -33,7 +33,7 @@ public class UniversityControllerTests {
   public void test_getUniversity() throws Exception {
   
     String fakeJsonResult="{ \"fake\" : \"result\" }";
-    String name = "UCS";
+    String name = "UCSB";
     when(mockUniversityQueryService.getJSON(eq(name))).thenReturn(fakeJsonResult);
 
     String url = String.format("/api/university/get?name=%s", name);

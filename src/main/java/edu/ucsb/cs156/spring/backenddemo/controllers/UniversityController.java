@@ -19,7 +19,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 
-@Tag(name="Full University Name ")
+@Tag(name="University info from universities.hipolabs.com")
 @Slf4j
 @RestController
 @RequestMapping("/api/university")
@@ -28,10 +28,10 @@ public class UniversityController {
     @Autowired
     UniversityQueryService universityQueryService;
 
-    @Operation(summary = "Get full university names that match with provided string", description = "json")
+    @Operation(summary = "Get list of universities that match a given name", description = "Uses API documented here: http://universities.hipolabs.com/search")
     @GetMapping("/get")
     public ResponseEntity<String> getUniversities(
-        @Parameter(name="name", description="part of a university name to be completed", example="UCS") @RequestParam String name
+        @Parameter(name="name", description="name to search, e.g. 'Harvard' or 'Stanford'", example="Harvard") @RequestParam String name
     ) throws JsonProcessingException {
         log.info("getUniversities: name={}", name);
         String result = universityQueryService.getJSON(name);
